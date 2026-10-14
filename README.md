@@ -1,13 +1,21 @@
 # Particles_Shape
 
-Particles_Shape is a historical PocketMine-MP plugin that schedules crown, cloud, laser and helix particle effects. The manifest credits BEcraft Gameplay and a Vietnamese edit and translation by Ghast Noob. The former README also names @BEcraft_MCPE.
+Particles_Shape creates crown, cloud, helix, double-helix and laser particle effects. The original author credit to BEcraft Gameplay and the Vietnamese edit and translation credit to Ghast Noob are retained.
 
-## Compatibility and status
+## Use
 
-The manifest declares PocketMine-MP API 2 and early 3 versions. The source uses old `Level`, particle, `PluginTask` and `PluginCommand` APIs. It has not been ported or tested on Axolotl-PM 5. Do not install it on a current server.
+Operators can add an effect at their current position, list active effects and remove an effect:
 
-The effect tasks repeat after being started by a command. A port needs lifecycle and performance tests so tasks stop when effects, players or worlds disappear. The historical README marked the plugin as work in progress; no new compatibility claim is made here.
+```text
+/particles add <helix|crown|cloud|dhelix|laser> <name>
+/particles list
+/particles remove <name>
+```
 
-There is no LICENSE file, CI workflow, DevTools PHAR, Axolotl-PM 5 runtime test or verified current release. Preserve the original and translation credits, and resolve redistribution rights before publishing a modified build. The historical README pointed contributors to a Facebook account named `xthanhnhanx`.
+Each server can run up to five effects at once. Each scheduled run emits no more than 100 particle points. Fixed effects stop if their world unloads; laser effects stop when their player disconnects or dies. All scheduled effects are cancelled when the plugin is disabled. Effect names are limited to 32 lowercase letters, digits, hyphens or underscores and cannot be reused while active.
 
-For questions about the NhanAZ ecosystem, use [NhanAZ Discord](https://discord.gg/j2X83ujT6c).
+## Compatibility and verification
+
+The manifest declares Axolotl-PM API 5.0.0 as the minimum API. PHPStan and PHAR builds use pinned API 5.0.0 and 5.49.1 source revisions; the isolated server startup check uses Axolotl-PM 5.49.1. Automated geometry fixtures verify particle counts and coordinate bounds. These checks do not claim connected-client visual verification.
+
+The build workflow uses [DevTools](https://github.com/NhanAZ/DevTools) to analyze the source, build the plugin PHAR and verify its contents. The repository has no LICENSE file or separate redistribution grant, so no stable release asset is published.
