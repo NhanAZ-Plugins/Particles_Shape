@@ -1,6 +1,6 @@
 # Particles_Shape
 
-Particles_Shape creates crown, cloud, helix, double-helix and laser particle effects. The original author credit to BEcraft Gameplay and the Vietnamese edit and translation credit to Ghast Noob are retained.
+Particles_Shape creates crown, cloud, helix, double-helix and laser particle effects. The plugin is authored and maintained by NhanAZ.
 
 ## Use
 
@@ -18,4 +18,4 @@ Each server can run up to five effects at once. Each scheduled run emits no more
 
 The manifest declares Axolotl-PM API 5.0.0 as the minimum API. PHPStan and PHAR builds use pinned API 5.0.0 and 5.49.1 source revisions; the isolated server startup check uses Axolotl-PM 5.49.1. Automated geometry fixtures verify particle counts and coordinate bounds. These checks do not claim connected-client visual verification.
 
-The build workflow uses [DevTools](https://github.com/NhanAZ/DevTools) to analyze the source, build the plugin PHAR and verify its contents. The repository has no LICENSE file or separate redistribution grant, so no stable release asset is published.
+The build workflow uses [DevTools](https://github.com/NhanAZ/DevTools) to analyze the source, build the plugin PHAR and verify its contents. The source is distributed under the [MIT License](LICENSE).

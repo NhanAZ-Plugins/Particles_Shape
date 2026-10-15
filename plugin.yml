@@ -3,7 +3,7 @@ name: Particles_Shape
 main: BEcraft\Loader
 version: 2.0.0
 api: 5.0.0
-author: BEcraft Gameplay
+author: NhanAZ
 description: Create bounded repeating particle shapes at a player's location
 
 commands:
